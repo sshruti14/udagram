@@ -13,7 +13,7 @@ spec:
         api: external
     spec:
       containers:
-        - image: sshruti14/udacity-frontend:local
+        - image: sshruti14/udagram-frontend:latest
           name: frontend
           imagePullPolicy: Always
           ports:

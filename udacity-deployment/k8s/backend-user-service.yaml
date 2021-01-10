@@ -1,12 +1,13 @@
 apiVersion: v1
-kind: ConfigMap
-data:
-  AWS_BUCKET: 
-  AWS_PROFILE: serveless
-  AWS_REGION: us-east-2
-  JWT_SECRET: 
-  POSTGRESS_DB: 
-  POSTGRESS_HOST:
-  URL: http://localhost:8100
+kind: Service
 metadata:
-  name: env-config
+  labels:
+    service: backend-user
+  name: backend-user
+spec:
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    service: backend-user
